@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" font-family="Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#555"/>
+    </marker>
+    <marker id="arr-b" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0,0 3.5,10 7" fill="#555"/>
+    </marker>
+  </defs>
+  <rect width="900" height="520" fill="#f8f9fa"/>
+  <text x="450" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">Diagrama Arquitetural — ESM Forum</text>
+
+  <!-- Cliente -->
+  <rect x="30" y="60" width="200" height="200" rx="8" fill="#e8f4fd" stroke="#4a90d9" stroke-width="2"/>
+  <text x="130" y="82" text-anchor="middle" font-weight="bold" fill="#2c6fad">Cliente (Navegador)</text>
+  <rect x="50" y="95" width="160" height="44" rx="6" fill="#4a90d9" stroke="#2c6fad" stroke-width="1.5"/>
+  <text x="130" y="116" text-anchor="middle" fill="white" font-weight="bold">Interface React</text>
+  <text x="130" y="132" text-anchor="middle" fill="white" font-size="11">(SPA — porta 3001)</text>
+  <rect x="50" y="155" width="160" height="36" rx="6" fill="#85c1e9" stroke="#2c6fad" stroke-width="1"/>
+  <text x="130" y="172" text-anchor="middle" fill="#1a1a2e" font-size="12">Componentes React</text>
+  <text x="130" y="188" text-anchor="middle" fill="#555" font-size="11">(Perguntas, Respostas, Form)</text>
+  <rect x="50" y="205" width="160" height="36" rx="6" fill="#85c1e9" stroke="#2c6fad" stroke-width="1"/>
+  <text x="130" y="222" text-anchor="middle" fill="#1a1a2e" font-size="12">Gerenciamento de Estado</text>
+  <text x="130" y="238" text-anchor="middle" fill="#555" font-size="11">(useState, props)</text>
+
+  <!-- Seta HTTP bidirecional -->
+  <line x1="230" y1="160" x2="330" y2="160" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="330" y1="180" x2="230" y2="180" stroke="#555" stroke-width="2" marker-end="url(#arr-b)"/>
+  <text x="280" y="153" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="bold">HTTP/REST</text>
+  <text x="280" y="197" text-anchor="middle" font-size="11" fill="#555">(JSON)</text>
+
+  <!-- Backend -->
+  <rect x="330" y="60" width="360" height="340" rx="8" fill="#fef9e7" stroke="#e67e22" stroke-width="2"/>
+  <text x="510" y="82" text-anchor="middle" font-weight="bold" fill="#ca6f1e">Backend (Node.js — porta 3000)</text>
+
+  <!-- app.js -->
+  <rect x="360" y="95" width="300" height="44" rx="6" fill="#e67e22" stroke="#ca6f1e" stroke-width="1.5"/>
+  <text x="510" y="116" text-anchor="middle" fill="white" font-weight="bold">app.js</text>
+  <text x="510" y="132" text-anchor="middle" fill="white" font-size="11">Express + Middleware (CORS, JSON)</text>
+
+  <!-- routes -->
+  <rect x="360" y="155" width="140" height="80" rx="6" fill="#f39c12" stroke="#ca6f1e" stroke-width="1"/>
+  <text x="430" y="175" text-anchor="middle" fill="white" font-weight="bold" font-size="12">routes/</text>
+  <text x="430" y="194" text-anchor="middle" fill="white" font-size="11">perguntas.js</text>
+  <text x="430" y="211" text-anchor="middle" fill="white" font-size="11">respostas.js</text>
+  <text x="430" y="228" text-anchor="middle" fill="white" font-size="11">busca.js</text>
+
+  <!-- db.js -->
+  <rect x="520" y="155" width="140" height="80" rx="6" fill="#f39c12" stroke="#ca6f1e" stroke-width="1"/>
+  <text x="590" y="175" text-anchor="middle" fill="white" font-weight="bold" font-size="12">db.js</text>
+  <text x="590" y="194" text-anchor="middle" fill="white" font-size="11">Conexão SQLite</text>
+  <text x="590" y="211" text-anchor="middle" fill="white" font-size="11">(Singleton)</text>
+
+  <!-- seta app -> routes -->
+  <line x1="510" y1="139" x2="430" y2="155" stroke="#ca6f1e" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- seta app -> db -->
+  <line x1="510" y1="139" x2="590" y2="155" stroke="#ca6f1e" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- seta routes -> db -->
+  <line x1="500" y1="195" x2="520" y2="195" stroke="#ca6f1e" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Middleware box -->
+  <rect x="360" y="255" width="300" height="60" rx="6" fill="#fdebd0" stroke="#e67e22" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="510" y="278" text-anchor="middle" fill="#ca6f1e" font-size="12" font-weight="bold">Middleware</text>
+  <text x="510" y="296" text-anchor="middle" fill="#555" font-size="11">express.json() | CORS | errorHandler</text>
+
+  <!-- API Endpoints -->
+  <rect x="360" y="330" width="300" height="55" rx="6" fill="#fdebd0" stroke="#e67e22" stroke-width="1"/>
+  <text x="510" y="350" text-anchor="middle" fill="#ca6f1e" font-size="12" font-weight="bold">Endpoints REST</text>
+  <text x="510" y="368" text-anchor="middle" fill="#555" font-size="11">GET /perguntas · POST /perguntas · DELETE /perguntas/:id</text>
+  <text x="510" y="381" text-anchor="middle" fill="#555" font-size="11">GET /respostas/:id · POST /respostas · GET /busca?q=</text>
+
+  <!-- Seta backend -> banco -->
+  <line x1="690" y1="220" x2="760" y2="220" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="760" y1="240" x2="690" y2="240" stroke="#555" stroke-width="2" marker-end="url(#arr-b)"/>
+  <text x="725" y="213" text-anchor="middle" font-size="11" fill="#555">SQL</text>
+
+  <!-- Banco -->
+  <rect x="760" y="140" width="120" height="140" rx="8" fill="#e8f8f5" stroke="#27ae60" stroke-width="2"/>
+  <text x="820" y="162" text-anchor="middle" font-weight="bold" fill="#1e8449">Dados</text>
+  <ellipse cx="820" cy="195" rx="40" ry="18" fill="#27ae60" stroke="#1e8449" stroke-width="1.5"/>
+  <rect x="780" y="195" width="80" height="50" fill="#27ae60"/>
+  <ellipse cx="820" cy="245" rx="40" ry="18" fill="#27ae60" stroke="#1e8449" stroke-width="1.5"/>
+  <text x="820" y="222" text-anchor="middle" fill="white" font-weight="bold" font-size="12">SQLite</text>
+  <text x="820" y="260" text-anchor="middle" fill="white" font-size="11">forum.db</text>
+
+  <!-- Tabelas -->
+  <rect x="760" y="300" width="120" height="80" rx="6" fill="#d5f5e3" stroke="#27ae60" stroke-width="1"/>
+  <text x="820" y="320" text-anchor="middle" fill="#1e8449" font-size="11" font-weight="bold">Tabelas</text>
+  <text x="820" y="338" text-anchor="middle" fill="#555" font-size="10">perguntas</text>
+  <text x="820" y="353" text-anchor="middle" fill="#555" font-size="10">respostas</text>
+  <text x="820" y="368" text-anchor="middle" fill="#555" font-size="10">votos · tags</text>
+</svg>

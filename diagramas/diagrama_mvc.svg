@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="950" height="480" font-family="Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0,10 3.5,0 7" fill="#444"/>
+    </marker>
+    <marker id="arr-b" markerWidth="10" markerHeight="7" refX="1" refY="3.5" orient="auto">
+      <polygon points="10 0,0 3.5,10 7" fill="#444"/>
+    </marker>
+  </defs>
+  <rect width="950" height="480" fill="#f8f9fa"/>
+  <text x="475" y="35" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a1a2e">Diagrama MVC Proposto — ESM Forum</text>
+
+  <!-- Cliente -->
+  <rect x="20" y="175" width="110" height="80" rx="8" fill="#ecf0f1" stroke="#95a5a6" stroke-width="2"/>
+  <text x="75" y="205" text-anchor="middle" font-weight="bold" fill="#555">Cliente</text>
+  <text x="75" y="223" text-anchor="middle" fill="#777" font-size="11">React SPA</text>
+  <text x="75" y="241" text-anchor="middle" fill="#777" font-size="11">fetch() HTTP</text>
+
+  <!-- Seta cliente -> route -->
+  <line x1="130" y1="215" x2="188" y2="215" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="188" y1="235" x2="130" y2="235" stroke="#444" stroke-width="2" marker-end="url(#arr-b)"/>
+  <text x="159" y="208" font-size="10" fill="#555">Request</text>
+  <text x="155" y="252" font-size="10" fill="#555">Response JSON</text>
+
+  <!-- Camada: Apresentação -->
+  <rect x="188" y="60" width="330" height="360" rx="8" fill="#fef0e7" stroke="#e67e22" stroke-width="2"/>
+  <text x="353" y="82" text-anchor="middle" font-weight="bold" fill="#ca6f1e" font-size="14">Camada de Apresentação</text>
+
+  <!-- Routes -->
+  <rect x="208" y="95" width="130" height="140" rx="6" fill="#e67e22" stroke="#ca6f1e" stroke-width="1.5"/>
+  <text x="273" y="116" text-anchor="middle" fill="white" font-weight="bold">Routes</text>
+  <line x1="208" y1="124" x2="338" y2="124" stroke="white" stroke-width="0.7"/>
+  <text x="273" y="142" text-anchor="middle" fill="white" font-size="11">perguntas.js</text>
+  <text x="273" y="160" text-anchor="middle" fill="white" font-size="11">respostas.js</text>
+  <text x="273" y="178" text-anchor="middle" fill="white" font-size="11">busca.js</text>
+  <text x="273" y="196" text-anchor="middle" fill="white" font-size="11">votos.js</text>
+  <text x="273" y="214" text-anchor="middle" fill="white" font-size="11">tags.js</text>
+
+  <!-- Seta routes -> controllers -->
+  <line x1="338" y1="165" x2="368" y2="165" stroke="#ca6f1e" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Controllers -->
+  <rect x="368" y="95" width="130" height="200" rx="6" fill="#f39c12" stroke="#ca6f1e" stroke-width="1.5"/>
+  <text x="433" y="116" text-anchor="middle" fill="white" font-weight="bold">Controllers</text>
+  <line x1="368" y1="124" x2="498" y2="124" stroke="white" stroke-width="0.7"/>
+  <text x="433" y="145" text-anchor="middle" fill="white" font-size="11">PerguntaController</text>
+  <text x="433" y="165" text-anchor="middle" fill="white" font-size="11">RespostaController</text>
+  <text x="433" y="185" text-anchor="middle" fill="white" font-size="11">BuscaController</text>
+  <text x="433" y="205" text-anchor="middle" fill="white" font-size="11">VotoController</text>
+  <text x="433" y="225" text-anchor="middle" fill="white" font-size="11">TagController</text>
+
+  <!-- View label -->
+  <rect x="208" y="260" width="290" height="50" rx="6" fill="#fdebd0" stroke="#e67e22" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="353" y="281" text-anchor="middle" fill="#ca6f1e" font-size="12" font-weight="bold">View = JSON Response</text>
+  <text x="353" y="300" text-anchor="middle" fill="#777" font-size="11">{ sucesso, dados, total, erro }</text>
+
+  <!-- Seta controllers -> services -->
+  <line x1="518" y1="195" x2="568" y2="195" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="568" y1="215" x2="518" y2="215" stroke="#444" stroke-width="2" marker-end="url(#arr-b)"/>
+
+  <!-- Camada: Negócio -->
+  <rect x="568" y="60" width="165" height="360" rx="8" fill="#eafaf1" stroke="#27ae60" stroke-width="2"/>
+  <text x="650" y="82" text-anchor="middle" font-weight="bold" fill="#1e8449" font-size="14">Negócio</text>
+
+  <!-- Services -->
+  <rect x="588" y="95" width="125" height="220" rx="6" fill="#27ae60" stroke="#1e8449" stroke-width="1.5"/>
+  <text x="650" y="116" text-anchor="middle" fill="white" font-weight="bold">Services</text>
+  <line x1="588" y1="124" x2="713" y2="124" stroke="white" stroke-width="0.7"/>
+  <text x="650" y="145" text-anchor="middle" fill="white" font-size="11">PerguntaService</text>
+  <text x="650" y="165" text-anchor="middle" fill="white" font-size="11">BuscaService</text>
+  <text x="650" y="185" text-anchor="middle" fill="white" font-size="11">VotoService</text>
+  <text x="650" y="205" text-anchor="middle" fill="white" font-size="11">TagService</text>
+  <text x="650" y="240" text-anchor="middle" fill="white" font-size="10" font-style="italic">Regras de negócio</text>
+  <text x="650" y="258" text-anchor="middle" fill="white" font-size="10" font-style="italic">Validações</text>
+  <text x="650" y="276" text-anchor="middle" fill="white" font-size="10" font-style="italic">Orquestração</text>
+  <text x="650" y="296" text-anchor="middle" fill="white" font-size="10" font-style="italic">Eventos (Observer)</text>
+
+  <!-- Seta services -> repos -->
+  <line x1="733" y1="195" x2="773" y2="195" stroke="#444" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="773" y1="215" x2="733" y2="215" stroke="#444" stroke-width="2" marker-end="url(#arr-b)"/>
+
+  <!-- Camada: Dados / Model -->
+  <rect x="773" y="60" width="160" height="360" rx="8" fill="#ebdef0" stroke="#8e44ad" stroke-width="2"/>
+  <text x="853" y="82" text-anchor="middle" font-weight="bold" fill="#7d3c98" font-size="14">Model / Dados</text>
+
+  <!-- Repositories -->
+  <rect x="790" y="95" width="125" height="180" rx="6" fill="#8e44ad" stroke="#7d3c98" stroke-width="1.5"/>
+  <text x="852" y="116" text-anchor="middle" fill="white" font-weight="bold">Repositories</text>
+  <line x1="790" y1="124" x2="915" y2="124" stroke="white" stroke-width="0.7"/>
+  <text x="852" y="145" text-anchor="middle" fill="white" font-size="11">PerguntaRepo</text>
+  <text x="852" y="165" text-anchor="middle" fill="white" font-size="11">RespostaRepo</text>
+  <text x="852" y="185" text-anchor="middle" fill="white" font-size="11">VotoRepo</text>
+  <text x="852" y="205" text-anchor="middle" fill="white" font-size="11">TagRepo</text>
+  <text x="852" y="255" text-anchor="middle" fill="#7d3c98" font-size="11" font-style="italic">Queries SQL</text>
+
+  <!-- Banco -->
+  <ellipse cx="853" cy="330" rx="50" ry="22" fill="#6c3483" stroke="#7d3c98" stroke-width="1.5"/>
+  <rect x="803" y="330" width="100" height="44" fill="#6c3483"/>
+  <ellipse cx="853" cy="374" rx="50" ry="22" fill="#6c3483" stroke="#7d3c98" stroke-width="1.5"/>
+  <text x="853" y="352" text-anchor="middle" fill="white" font-weight="bold" font-size="12">SQLite</text>
+  <text x="853" y="370" text-anchor="middle" fill="white" font-size="11">forum.db</text>
+
+  <!-- Seta repo -> banco -->
+  <line x1="853" y1="275" x2="853" y2="308" stroke="#7d3c98" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Legenda fluxo -->
+  <rect x="20" y="380" width="520" height="80" rx="6" fill="white" stroke="#ccc" stroke-width="1"/>
+  <text x="30" y="400" font-size="12" font-weight="bold" fill="#333">Fluxo de uma requisição (ex: Busca)</text>
+  <text x="30" y="420" font-size="11" fill="#555">Cliente → Route → Controller → Service (valida) → Repository (SQL) → SQLite</text>
+  <text x="30" y="438" font-size="11" fill="#555">SQLite → Repository → Service → Controller (formata View JSON) → Cliente</text>
+  <text x="30" y="456" font-size="11" fill="#27ae60">✔ Cada camada conhece apenas a camada adjacente (baixo acoplamento)</text>
+</svg>
